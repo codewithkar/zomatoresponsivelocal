@@ -1,0 +1,624 @@
+*{
+    padding: 0;
+    margin: 0;
+    /* box-sizing: border-box; */
+    font-family:  Arial, Helvetica, sans-serif;
+}
+body{
+    max-width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    background: rgb(252,252,252);
+}
+
+/* ..............header section....................... */
+header{
+    background: url(https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 420px;
+    letter-spacing: 1px;
+}
+nav{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-self: center;
+}
+.getapp{
+    width: 30%;
+}
+.getapp a{
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: .9rem;
+}
+.navitem{
+    width: 70%;
+
+}
+.navitem ul{
+    display: flex;
+    justify-content: flex-end;
+    align-items: right;
+    list-style: none;
+}
+.navitem ul li a{
+    text-decoration: none;
+    color: white;
+    margin: 0 20px;
+    font-size: 1.1rem;
+    font-weight: 200;
+}
+.sidenav{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.185);
+    backdrop-filter: blur(10px);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.sidenav ul li{
+    list-style: none;
+    padding: 10px;
+}
+.sidenav ul li a{
+    color: white;
+    text-decoration: none;
+}
+.icon{
+    display: none;
+}
+/* .....................Header Content Styling..................... */
+.headerbody{
+    color: #fff;
+    display: flex;
+    width: 100%;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+.headerbody img{
+    max-width: 300px;
+    height: 60px;
+}
+.headerbody h1{
+    font-size: 2.2rem;
+    font-weight: 100;
+    margin: 30px 0;
+    letter-spacing: 2px;
+}
+.searchbox{
+    display: flex;
+    align-items: center;
+    background: #fff;
+    height: 3.3rem;
+    width: 60%;
+    border-radius: 8px;
+}
+.searchbox .dropplace, .searchbox .searchdish{
+    display: inline-flex;
+    padding: 0 1rem;
+}
+.searchbox .dropplace{
+    width: 35%;
+    border-right: 1px solid rgb(128, 122, 122);
+}
+.searchbox .searchdish{
+    width: 65%;
+}
+.searchbox input{
+    border: 0;
+    outline: none;
+    font-size: 1rem;
+    background: transparent;
+    color: gray;
+    width: 100%;
+    margin-left:6px ;
+    padding-left: .5rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.searchbox .dropdownimg{
+    margin: 4px;
+ }
+
+/* .................Order section styling.............. */
+
+.ordersection{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+.ordersection .orderimg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* max-width: 100%; */
+    margin-top: 2%;
+    margin-bottom: 40px;
+    padding: 0px 10px 20px 0px;
+}
+.orderimg .card{
+    width: 50%;
+    margin: 15px;
+    border-radius: 15px;
+    border: 1px solid rgb(237, 216, 216);
+    transition: transform 0.5s;
+    position: relative;
+}
+.orderimg .card img{
+    width: 100%;
+    height: 250px;
+    border-radius: 15px;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+.orderimg .card:hover{
+    transform: scale(1.1);
+}
+.orderimg .card .content{
+    /* text-align: left; */
+    width: 100%;
+    padding:0 12px;
+    position: absolute;
+    bottom: 0;
+    background: #fff;
+}
+.orderimg .card .content .cardheading{
+    padding-top: 20px;
+    font-size: 19px;
+    font-weight: 100;
+    text-align: left;
+}
+.orderimg .card .content .cardtext{
+    padding-top: 15px;
+    padding-bottom: 20px;
+    font-size: 17px;
+    color: rgb(91, 89, 89);
+    text-align: left;
+}
+
+/* .......................Collection sectio Style................. */
+.collections{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+.collections h1{
+    font-weight: lighter;
+    text-align: left;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.collections p{
+    color: rgb(91, 89, 89);
+    font-weight: lighter;
+    text-align: left;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+.collections p a{
+    color: rgb(235, 114, 114);
+    margin-left: 160px;
+    text-decoration: none;
+}
+.collections .collectionimg{
+   display: flex;
+   align-items: left;
+   justify-content: space-evenly;
+   width: 50%;
+   flex-wrap: wrap;
+}
+.collections .collectionimg .card{
+    max-width: 260px;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 8px;
+    position: relative;
+    margin: 12px 0;
+}
+.collectionimg .card img{
+    width: 100%;
+    height: 100%;
+
+}
+.gradient-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    z-index: 1;
+}
+.collectionimg .card .content{
+    position: absolute;
+    align-items: left;
+    bottom: 0;
+    width: 100%;
+    margin-left: 10px;
+    z-index: 2;
+}
+.collectionimg .card .content p{
+    color: #fff;
+    font-weight: 550;
+    font-size: 1.2rem;
+    font-weight: lighter;
+    margin: 7px;
+}
+.collectionimg .card .content .places{
+    font-weight: lighter; 
+    font-size: .9rem;
+}
+
+/* .....................Locality section styling............ */
+.localityhead{
+    text-align: center;
+    margin-top: 70px;
+}
+.local{
+    width: 100%;
+    margin: 15px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.local .placesdiv{
+    border: 1px solid rgb(220, 218, 218);
+    width: 30%;
+    height: inherit;
+    margin: 10px 5px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 8px;
+}
+.local .placesdiv a{
+    text-decoration: none;
+}
+.local .placesdiv p{
+    margin: 0;
+}
+.local .placesdiv .headline{
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+.local .placesdiv .numofplace{
+    font-size: 16px;
+    padding-top: 8px;
+}
+.local .placesdiv i{
+    align-items: right;
+    /* font-weight: 10px; */
+    color: #979191;
+}
+.local .placesdiv:hover{
+    box-shadow: 0 1px 1px 0 rgba(92, 91, 91, 0.2);
+}
+
+/* ....................get the app section styling................. */
+.getappcontainer{
+    background-color: rgb(248, 246, 245);
+}
+.gettheapp{
+    width: 80%;
+    margin: 130px 170px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+
+}
+.getappimg{
+    width: 30%;
+    margin-top: 100px;
+    /* object-fit: cover; */
+    
+}
+.getappimg img{
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+}
+.getappcontent{
+    width: 60%;
+    align-content: left;
+    
+}
+.getappcontent h1{
+    font-size: 2.5rem;
+    font-weight: lighter;
+    padding-bottom: 20px;
+}
+.getappcontent p{
+    font-size: 1rem;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    font-weight: lighter;
+    color: #232222;
+}
+.getappcontent .radiobuttons input{
+    margin: 30px 0px;
+}
+.getappcontent .radiobuttons input[type=radio]{
+    accent-color: red;
+}
+.getappcontent .emailinput{
+    width: 100%;
+}
+.getappcontent .emailinput input{
+    width: 60%;
+    padding: 15px 8px;
+    border: 0;
+    outline: none;
+    border: 1px solid rgb(129, 125, 125);
+    border-radius: 7px;
+    font-size: 1rem;
+}
+.getappcontent .emailinput button{
+    padding: 15px 8px;
+    background: red;
+    border: 0;
+    outline: none;
+    font-size: 1rem;
+    border-radius: 7px;
+    color: #fff;
+    margin-left: 7px;
+    width: 30%;
+}
+.getappcontent .smallp{
+    padding: 20px 0px 15px;
+    font-size: 1rem;
+    color: #9b8f8f;
+    font-weight: lighter;
+}
+.getappcontent .appstoreimg {
+    justify-content: space-between;
+}
+.getappcontent .appstoreimg img{
+    max-width: 150px;
+    padding: 10px;
+}
+
+/* ....................Explore options styling............... */
+.exploreoptions{
+    width: 100%;
+    margin: 40px auto;
+    justify-content: space-between;
+    align-items: center;
+}
+.exploreoptions h1{
+    margin: 10px 15px;
+    padding-bottom: 10px;
+}
+.exploreoptions .options{
+    border: 1px solid rgb(220, 218, 218);
+    width: 100%;
+    height: inherit;
+    margin: 10px 15px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 8px;
+}
+.exploreoptions .options a{
+    text-decoration: none;
+}
+.exploreoptions .options a p{
+    margin: 0;
+    padding: 15px;
+    font-size: 1.3rem;
+    font-weight: lighter;
+    color: black;
+}
+.exploreoptions .options i{
+    align-items: right;
+    font-weight: 10px;
+}
+
+/* ..................Footer section styling .............. */
+footer{
+    width: 100%;
+    background: #F8F8F8;
+}
+footer .footersection{
+    width: 90%;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+.footerhead{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.footerhead img{
+    max-width: 140px;
+}
+.footerhead .footerbutton button{
+    padding: 10px 20px;
+    border: 0;
+    outline: none;
+    border: 1px solid black;
+    font-size: 16;
+    margin: 0 6px;
+    border-radius: 8px;
+}
+.footerhead .footerbutton button img{
+    max-width: 15px;
+}
+.footercolums{
+    display: flex;
+    width: 100%;
+    margin-top: 50px;
+    flex-wrap: nowrap; 
+}
+.footercolums .column{
+    width: 25%;
+}
+.footercolums .column h6{
+    font-size:1rem ;
+    font-weight: lighter;
+    padding: 8px 5px;
+}
+.footercolums .column ul li{
+    list-style: none;
+    padding: 5px;
+}
+.footercolums .column ul li a{
+    text-decoration: none;
+    font-size: 0.8rem;
+    color: #676464;
+    font-weight: lighter;
+}
+.footercolums .sociallink ul li a{
+    font-size: 1.2rem;
+    color: black;
+}
+.footercolums .sociallink ul li a i{
+    border-radius: 50%;
+}
+.footercolums .sociallink ul li a img{
+    max-width: 120px;
+    /* padding: 10px; */
+}
+hr{
+    margin: 20px 0px;
+}
+.footersection{
+    font-size: .9rem;
+    color: #676464;
+    font-weight: lighter;
+}
+
+
+/* ................Media queries..................... */
+@media screen and (max-width:760px) {
+    .icon{
+        display: block;
+    }
+    .hidemob{
+        display: none;
+    }
+    .sidenav{
+        width: 100%;
+    }
+    .headerbody h1{
+        font-size: 1.9rem;
+        letter-spacing: 1px;
+    }
+    .headerbody img{
+        max-width: 250px;
+        height: 50px;
+    }
+    .collections h1{
+        font-weight: lighter;
+        text-align: left;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    .collections p{
+        color: rgb(91, 89, 89);
+        font-weight: lighter;
+        text-align: left;
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    .local{
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .local .placesdiv{
+        width: 100%;
+        height: inherit;
+        margin: 10px 5px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 8px;
+    }
+    .getappcontent h1{
+        font-size: .7rem;
+        font-weight: lighter;
+        padding-bottom: 20px;
+    }
+    .getappcontent p{
+        font-size: .8rem;
+        letter-spacing: 1px;
+        word-spacing: 2px;
+        font-weight: lighter;
+        color: #232222;
+    }
+    .getappcontent .emailinput button{
+        font-size: 0.1rem;
+    }
+}
+
+@media (max-width: 992px){
+    .navitem ul li a{
+        font-size: .7rem;
+    }
+    .collections h1{
+        font-weight: lighter;
+        text-align: left;
+        font-size: 1.9rem;
+        margin-bottom: 10px;
+    }
+    .collections p{
+        color: rgb(91, 89, 89);
+        font-weight: lighter;
+        text-align: left;
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 882px){
+    .navitem ul li a{
+        font-size: .7rem;
+    }
+    .getapp a{
+        font-size:  0.7rem; 
+    }
+    .navbar{
+        display: block;
+    }
+    .getappcontent h1{
+        font-size: 2rem;
+        font-weight: lighter;
+        padding-bottom: 20px;
+    }
+    .getappcontent p{
+        font-size: .8rem;
+        letter-spacing: 1px;
+        word-spacing: 2px;
+        font-weight: lighter;
+        color: #232222;
+    }
+    .getappcontent .emailinput button{
+        padding: 15px 8px;
+        background: red;
+        border: 0;
+        outline: none;
+        font-size: .9rem;
+        border-radius: 7px;
+        color: #fff;
+        margin-left: 7px;
+        width: 30%;
+    }
+}

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zomato</title>
+  <link rel="icon" href="data:image/png;base64,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">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="container-fluid">
+    <!-- ..............................nav bar Starts.................... -->
+
+    <nav class="nav container navbar">   
+            
+      <div class="getapp .navbar-brand d-inline">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF" max-width="10" height="10" viewBox="0 0 20 20" aria-labelledby="icon-svg-title- icon-svg-desc-" role="img" class="sc-rbbb40-0 gvsUip"><title>download-app</title><path d="M18.5793 9.18939H16.5865H16.3199C15.7307 9.18939 15.2529 9.6672 15.2529 10.2583V10.3742C15.2529 10.9659 15.7307 11.444 16.3207 11.444H18.3156H18.5793C19.1696 11.444 19.6488 10.9639 19.6488 10.3742L19.6477 10.2569C19.6488 9.6672 19.1696 9.18939 18.5793 9.18939Z"></path><path d="M18.5804 6.52262H18.1097V1.35122C18.1097 0.607964 17.5017 0 16.7582 0H7.84167C7.09841 0 6.49045 0.608249 6.49045 1.35122V5.06151C4.69196 6.07821 2.83696 7.14029 2.83296 7.14286C1.82597 7.5573 0.350586 8.89453 0.350586 12.0522C0.350586 12.3342 0.369139 12.5945 0.395113 12.846C0.40339 12.9197 0.412524 12.9904 0.422514 13.0615C0.448488 13.2462 0.481027 13.4229 0.519845 13.5907C0.533831 13.6506 0.544678 13.7131 0.559805 13.7705C0.612039 13.9646 0.67255 14.1467 0.740482 14.32C0.774733 14.4059 0.811839 14.4841 0.84923 14.5646C0.88919 14.6494 0.929436 14.7327 0.972535 14.8106C1.02249 14.9045 1.07244 14.995 1.12724 15.0809C1.14037 15.1009 1.15464 15.1192 1.16805 15.1394C2.46847 17.1052 4.8675 17.114 4.8675 17.114H6.49045V18.6494C6.49045 19.3918 7.09841 19.9997 7.84167 19.9997H16.7579C17.5014 19.9997 18.1094 19.3915 18.1094 18.6494V16.7767H18.3155V16.7755H18.5784C19.1695 16.7755 19.6487 16.2974 19.6476 15.7063L19.6487 15.5898C19.6476 14.9996 19.1695 14.5229 18.5792 14.5229H18.3155H16.5861H16.3195C15.7292 14.5229 15.2525 15.0007 15.2525 15.5907V15.7091C15.2525 16.2977 15.7304 16.7775 16.3203 16.7775H17.1692V17.5008H7.43036V7.79877C7.91959 7.48851 8.37256 7.18995 8.63088 6.98987C9.93957 5.97774 11.1818 5.17169 11.3499 4.4407C11.5688 3.49222 10.8407 2.69302 9.57765 3.34922C9.17976 3.55587 8.36315 4.00885 7.43036 4.53261V2.14129L17.1692 2.14271V6.52205H16.5861V6.52319H16.3209C15.7304 6.52319 15.2511 7.001 15.2511 7.59269V7.70858C15.2511 8.29999 15.7303 8.77665 16.3195 8.77665H16.5846H18.3141H18.5798C19.1695 8.77665 19.6476 8.29884 19.6476 7.70858V7.58955C19.6487 7.00186 19.1709 6.52262 18.5804 6.52262ZM12.2986 17.9752C12.6731 17.9752 12.9751 18.2774 12.9751 18.6511C12.9751 19.0255 12.6728 19.3267 12.2986 19.3267C11.9256 19.3267 11.6242 19.0247 11.6242 18.6511C11.6247 18.2786 11.927 17.9752 12.2986 17.9752ZM13.7266 1.30098H10.8735C10.7839 1.30098 10.7097 1.2282 10.7097 1.13829C10.7097 1.04695 10.7839 0.974169 10.8735 0.974169H13.7266C13.8163 0.974169 13.8893 1.04667 13.8893 1.13829C13.8893 1.22792 13.8163 1.30098 13.7266 1.30098Z"></path><path d="M18.5788 11.8561H18.3151H16.3193C15.7302 11.8561 15.251 12.3353 15.251 12.9253V13.0423C15.251 13.6329 15.7291 14.1107 16.3193 14.1107H16.5845H18.3139H18.5782C19.1693 14.1107 19.646 13.6329 19.6474 13.0423V12.9253C19.6472 12.3353 19.1705 11.8561 18.5788 11.8561Z"></path></svg>
+        <a href="">Get the App</a>
+      </div>
+
+      <div class="navitem d-inline">
+        <ul>
+          <li class="hidemob"><a href="">Investor Relations</a></li>
+          <li class="hidemob"><a href="">Add Restaurant</a></li>
+          <li class="hidemob"><a href="">Log in</a></li>
+          <li class="hidemob"><a href="">Sign Up</a></li>
+          <li class="icon" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#ffff"><path d="M144-264v-72h672v72H144Zm0-180v-72h672v72H144Zm0-180v-72h672v72H144Z"/></svg></a></li>
+        </ul>
+      </div> 
+
+      <div class="sidenav">
+        <ul>
+          <li onclick=closeSide()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#ffff"><path d="m291-240-51-51 189-189-189-189 51-51 189 189 189-189 51 51-189 189 189 189-51 51-189-189-189 189Z"/></svg></a></li>
+          <li><a href="">Investor Relations</a></li>
+          <li><a href="">Add Restaurant</a></li>
+          <li><a href="">Log in</a></li>
+          <li><a href="">Sign Up</a></li>
+        </ul>
+      </div> 
+
+    </nav>
+
+    <!-- .................................Header Body Content.................... -->
+    <div class="headerbody">
+      <img src="https://b.zmtcdn.com/web_assets/8313a97515fcb0447d2d77c276532a511583262271.png" alt="">
+      <h1>Discover the best food & drinks in <b>Trivandrum</b></h1>
+
+      <div class="searchbox col-lg-6 col-sm-6 col-md-6">
+
+        <div class="dropplace col-lg-4 col-sm-4 col-md-4">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7E8B" max-width="20" height="20" viewBox="0 0 20 20" aria-labelledby="icon-svg-title- icon-svg-desc-" role="img" class="sc-rbbb40-0 iRDDBk"><title>location-fill</title><path d="M10.2 0.42c-4.5 0-8.2 3.7-8.2 8.3 0 6.2 7.5 11.3 7.8 11.6 0.2 0.1 0.3 0.1 0.4 0.1s0.3 0 0.4-0.1c0.3-0.2 7.8-5.3 7.8-11.6 0.1-4.6-3.6-8.3-8.2-8.3zM10.2 11.42c-1.7 0-3-1.3-3-3s1.3-3 3-3c1.7 0 3 1.3 3 3s-1.3 3-3 3z"></path></svg>
+          <input type="" placeholder="Kulathoor,Thiruvananthapuram">
+          <div class="dropdownimg">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="#4F4F4F" max-width="12" height="12" viewBox="0 0 20 20" aria-labelledby="icon-svg-title- icon-svg-desc-" role="img" class="sc-rbbb40-0 ezrcri"><title>down-triangle</title><path d="M20 5.42l-10 10-10-10h20z"></path></svg>
+          </div>
+        </div>
+
+        <div class="searchdish col-lg-8 col-sm-8 col-md-8">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="#828282" max-width="18" height="18" viewBox="0 0 20 20" aria-labelledby="icon-svg-title- icon-svg-desc-" role="img" class="sc-rbbb40-0 iwHbVQ"><title>Search</title><path d="M19.78 19.12l-3.88-3.9c1.28-1.6 2.080-3.6 2.080-5.8 0-5-3.98-9-8.98-9s-9 4-9 9c0 5 4 9 9 9 2.2 0 4.2-0.8 5.8-2.1l3.88 3.9c0.1 0.1 0.3 0.2 0.5 0.2s0.4-0.1 0.5-0.2c0.4-0.3 0.4-0.8 0.1-1.1zM1.5 9.42c0-4.1 3.4-7.5 7.5-7.5s7.48 3.4 7.48 7.5-3.38 7.5-7.48 7.5c-4.1 0-7.5-3.4-7.5-7.5z"></path></svg>
+          <input type="text" placeholder="Search for restautent, cuisine or a dish">
+        </div>
+
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ...........................Oreder Section Starts............................... -->
+  <div class="ordersection">
+    <div class="orderimg">
+      <div class="card">
+        <a href=""><img src="https://b.zmtcdn.com/webFrontend/e5b8785c257af2a7f354f1addaf37e4e1647364814.jpeg?output-format=webp&fit=around|402:360&crop=402:360;*,*" alt=""></a>
+        <div class="content">
+          <h3 class="cardheading">Order Online</h3>
+          <p class="cardtext">Stay home and order to your doorstep</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <a href=""><img src="https://b.zmtcdn.com/webFrontend/d026b357feb0d63c997549f6398da8cc1647364915.jpeg?output-format=webp&fit=around|402:360&crop=402:360;*,*" alt=""></a>
+        <div class="content">
+          <h3 class="cardheading">Dining</h3>
+          <p class="cardtext">view the city's favourite dining venues</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+ <!-- ..........................Collection Seection................ -->
+  <div class="collections">
+    <h1>Collections</h1>
+    <p class="col-md-8">Explore curated lists of top restaurants, cafes, pubs, and bars in Trivandrum, based on trends 
+    <a href="" class="text-right col-md-4">All collections in Trivandrum <i class="fa-solid fa-caret-right"></i></a></p>
+    <div class="collectionimg">
+      <div class="card">
+        <img src="https://b.zmtcdn.com/data/collections/d3ee78829b0fa81ea7b8cdaed79b389d_1528271253.jpg?fit=around|858.4000000000001:256&crop=858.4000000000001:256;*,*" alt="">
+        <div class="gradient-overlay"></div>
+        <div class="content">
+          <p>Must visit restaurants in Tr..</p>
+          <p class="places">8 Places <i class="fa-solid fa-caret-right"></i></p>
+                        
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://b.zmtcdn.com/data/collections/7e98e98150ebea8e594fc42d3d000f34_1691353631.png?output-format=webp" alt="">
+        <div class="gradient-overlay"></div>
+        <div class="content">
+          <p >Great cafes</p>
+          <p class="places">7 Places   <i class="fa-solid fa-caret-right"></i></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    
+ <!-- .....................Popular Locality section.............. -->
+  <div class="collections">
+    <h1 class="localityhead" style="font-weight: lighter;">Popular localities in and around <b>Trivandrum</b></h1>
+    <div class="local row">
+      <div class="placesdiv col-lg-4 col-md-12 col-sm-12">
+        <a href="">
+          <p class="headline">Palayam</p>
+          <p class="numofplace">192 Places</p>
+        </a>
+        <i class="fa-solid fa-chevron-right"></i>
+      </div>
+
+      <div class="placesdiv col-lg-4 col-md-12 col-sm-12">
+        <a href="">
+          <p class="headline">Kulathoor</p>
+          <p class="numofplace">157 Places</p>
+        </a>
+        <i class="fa-solid fa-chevron-right"></i>
+      </div>
+
+      <div class="placesdiv col-lg-4 col-md-12 col-sm-12">
+        <a href="">
+          <p class="headline">Amalamukku</p>
+          <p class="numofplace">113 Places</p>
+        </a>
+        <i class="fa-solid fa-chevron-right"></i>
+      </div>
+
+      <div class="placesdiv col-lg-4 col-md-12 col-sm-12">
+        <a href="">
+          <p class="headline">Kazhakkoottam</p>
+          <p class="numofplace">106 Places</p>
+        </a>
+        <i class="fa-solid fa-chevron-right"></i>
+      </div>
+
+      <div class="placesdiv col-lg-4 col-md-12 col-sm-12">
+        <a href="">
+          <p class="headline">Kumarapuram</p>
+          <p class="numofplace">103 Places</p>
+        </a>
+        <i class="fa-solid fa-chevron-right"></i>
+      </div>
+
+      <div class="placesdiv col-lg-4 col-md-12 col-sm-12">
+        <a href="">
+          <p class="headline">Thycaud</p>
+          <p class="numofplace">92 Places</p>
+        </a>
+        <i class="fa-solid fa-chevron-right"></i>
+      </div>
+
+      <div class="placesdiv col-lg-4 col-md-12 col-sm-12">
+        <a href="">
+          <p class="headline">Kannanthura</p>
+          <p class="numofplace">83 Places</p>
+        </a>
+        <i class="fa-solid fa-chevron-right"></i>
+      </div>
+
+      <div class="placesdiv col-lg-4 col-md-12 col-sm-12">
+        <a href="">
+          <p class="headline">Kesavadasapuram</p>
+          <p class="numofplace">72 Places</p>
+        </a>
+        <i class="fa-solid fa-chevron-right"></i>
+      </div>
+
+      <div class="placesdiv col-lg-4 col-md-12 col-sm-12" style="height: 60px; align-items: center; justify-content: center;">
+        <a href="">
+          <p style="padding-right: 2px; font-size: 15px;">See More</p>
+        </a>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- ......................Get the App....................... -->
+  <div class="getappcontainer">
+    <div class="gettheapp">
+
+      <div class="getappimg">
+        <img src="https://b.zmtcdn.com/data/o2_assets/f773629053b24263e69f601925790f301680693809.png" alt="">
+      </div>
+
+      <div class="getappcontent">
+
+        <h1>Get the Zomato app</h1>
+        <p>We will send you a link, open it on your phone to download the app</p>
+
+        <div class="radiobuttons">
+          <input type="radio" id="email" checked>Email &nbsp; &nbsp;
+          <input type="radio" id="phone">Phone
+        </div>
+
+        <div class="emailinput form-inline form-group">
+          <input type="email" placeholder="Email">
+          <button>Share App Link</button>
+        </div>
+
+        <p class="smallp">Download app from</p>
+
+        <div class="appstoreimg">
+          <a href="">
+          <img src="https://b.zmtcdn.com/data/webuikit/23e930757c3df49840c482a8638bf5c31556001144.png" alt="">
+          <img src="https://b.zmtcdn.com/data/webuikit/9f0c85a5e33adb783fa0aef667075f9e1556003622.png" alt="">
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ......................Explore Options near me section............... -->
+  <div class="collections">
+    <div class="exploreoptions">
+      <h1>Explore options near me</h1>
+
+      <div class="options">
+        <a href=""><p class="headline">Popular cuisines near me</p></a>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+
+      <div class="options">
+        <a href=""><p class="headline">Popular restaurant types near me</p></a>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+
+      <div class="options">
+        <a href=""><p class="headline">Top Restaurant Chains</p></a>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+
+      <div class="options">
+        <a href=""><p class="headline">Cities We Deliver To</p></a>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- .....................Footer section..................... -->
+  <footer>
+    <div class="footersection container">
+      <div class="footerhead">
+
+        <img src="https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png?fit=around|198:42&crop=198:42;*,*" alt="">
+
+        <div class="footerbutton">
+          <button>
+            <img src="https://cdn-icons-png.flaticon.com/512/206/206606.png" alt="">India &nbsp;
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <button><i class="fa-solid fa-globe"></i> &nbsp;English &nbsp;
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="footercolums">
+        <div class="column">
+          <h6>ABOUT ZOMATO</h6>
+          <ul>
+            <li><a href="">Who We are</a></li>
+            <li><a href="">Blog</a></li>
+            <li><a href="">Work With Us</a></li>
+            <li><a href="">Inventor Relations</a></li>
+            <li><a href="">Report Fraud</a></li>
+            <li><a href="">Press Kit</a></li>
+            <li><a href="">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="column">
+          <h6>ZOMAVERSE</h6>
+          <ul>
+            <li><a href="">Zomato</a></li>
+            <li><a href="">Blinkit</a></li>
+            <li><a href="">Feeding India</a></li>
+            <li><a href="">Hyperpure</a></li>
+            <li><a href="">Zomato Live</a></li>
+            <li><a href="">Zomaland</a></li>
+            <li><a href="">Weather Union</a></li>
+          </ul>
+        </div>
+
+        <div class="column">
+          <h6>FOR RESTAURANTS</h6>
+          <ul>
+            <li><a href="">Partner With Us</a></li>
+            <li><a href="">Apps For You</a></li>
+          </ul>
+        </div>
+
+        <div class="column">
+          <h6>LEARN MORE</h6>
+          <ul>
+            <li><a href="">Privacy</a></li>
+            <li><a href="">Security</a></li>
+            <li><a href="">Terms</a></li>
+            <li><a href="">Sitemap</a></li>
+          </ul>
+        </div>
+
+        <div class="column sociallink">
+          <h6>SOCIAL LINKS</h6>
+          <ul>
+            <li>
+              <a href=""><i class="fa-brands fa-linkedin"></i></a>
+              <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+              <a href=""><i class="fa-brands fa-square-twitter"></i></a>
+              <a href=""><i class="fa-brands fa-youtube"></i></a>
+              <a href=""><i class="fa-brands fa-square-facebook"></i></i></a>
+            </li>
+            <li>
+              <a href=""><img src="https://b.zmtcdn.com/data/webuikit/9f0c85a5e33adb783fa0aef667075f9e1556003622.png" alt=""></a>
+            </li>
+            <li>
+              <a href=""><img src="https://b.zmtcdn.com/data/webuikit/23e930757c3df49840c482a8638bf5c31556001144.png" alt=""></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <p>By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners. 2008-2024 © Zomato™ Ltd. All rights reserved.</p>
+    </div>
+  </footer>
+
+<!-- ..............................Java Script..................... -->
+  <script>
+    function showSidebar(){
+      const sidenav = document.querySelector('.sidenav')
+      sidenav.style.display = 'flex'
+    }
+    function closeSide(){
+      const sidenav = document.querySelector('.sidenav')
+      sidenav.style.display = 'none'
+    }
+  </script>
+</body>
+</html>
